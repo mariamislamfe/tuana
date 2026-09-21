@@ -9,14 +9,14 @@ import { Avatar } from "@/components/ui/avatar";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from "@/components/ui/dropdown-menu";
 import { logoutAdminAction } from "@/app/admin/(auth)/login/actions";
 
-export function AdminShell({ adminName, children }: { adminName: string; children: React.ReactNode }) {
+export function AdminShell({ adminName, brandName, children }: { adminName: string; brandName: string; children: React.ReactNode }) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-paper">
       <aside className="fixed inset-y-0 left-0 hidden w-60 flex-col border-r border-line bg-paper-raised lg:flex">
         <Link href="/admin" className="flex items-center gap-2 px-6 py-6">
-          <span className="font-display text-xl text-ink">Tuana</span>
+          <span className="font-display text-xl text-ink">{brandName}</span>
           <span className="rounded-xs bg-surface px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wider text-ink-3">Admin</span>
         </Link>
         <div className="flex-1 overflow-y-auto scrollbar-thin pb-6">
@@ -32,7 +32,7 @@ export function AdminShell({ adminName, children }: { adminName: string; childre
       <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
         <SheetContent side="left" className="max-w-64 p-0">
           <SheetHeader>
-            <SheetTitle>Tuana Admin</SheetTitle>
+            <SheetTitle>{brandName} Admin</SheetTitle>
           </SheetHeader>
           <div className="flex-1 overflow-y-auto py-4">
             <SidebarNav onNavigate={() => setMobileOpen(false)} />
