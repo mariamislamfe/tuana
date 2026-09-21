@@ -19,11 +19,11 @@ export default function AccountLoginPage() {
       <form action={formAction} className="mt-8 flex flex-col gap-4">
         <div>
           <Label htmlFor="email">Email</Label>
-          <Input id="email" name="email" type="email" required defaultValue="maren.kessler@gmail.com" />
+          <Input id="email" name="email" type="email" required autoComplete="email" />
         </div>
         <div>
           <Label htmlFor="password">Password</Label>
-          <Input id="password" name="password" type="password" required defaultValue="tuana-demo-2026" />
+          <Input id="password" name="password" type="password" required autoComplete="current-password" />
         </div>
 
         {state.error && <p className="text-[13px] text-danger">{state.error}</p>}
@@ -39,7 +39,6 @@ export default function AccountLoginPage() {
           Create an account
         </Link>
       </p>
-      <p className="mt-2 text-center text-[12px] text-ink-3">Demo credentials are pre-filled for you.</p>
     </div>
   );
 }

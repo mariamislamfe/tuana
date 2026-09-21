@@ -19,7 +19,7 @@ import { EmptyState } from "@/components/ui/empty-state";
 type ShippingMethod = "standard" | "express";
 type PaymentMethod = "card" | "paypal" | "apple_pay";
 
-export function CheckoutView({ rules }: { rules: PricingRules }) {
+export function CheckoutView({ rules, brandName }: { rules: PricingRules; brandName: string }) {
   const router = useRouter();
   const { items, coupon, clear } = useCartStore();
   const mounted = useMounted();
@@ -89,7 +89,7 @@ export function CheckoutView({ rules }: { rules: PricingRules }) {
   return (
     <div className="mx-auto max-w-[1440px] px-4 py-10 sm:px-6 lg:px-10">
       <div className="mb-8 flex items-center justify-between">
-        <Link href="/" className="font-display text-xl text-ink">Tuana</Link>
+        <Link href="/" className="font-display text-xl text-ink">{brandName}</Link>
         <p className="flex items-center gap-1.5 text-[12.5px] text-ink-3">
           <Lock className="h-3.5 w-3.5" /> Secure Checkout
         </p>
