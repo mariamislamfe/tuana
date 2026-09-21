@@ -24,7 +24,7 @@ export function defaultContent(): SiteContent {
         subtext:
           "Skincare that works, makeup that feels like skin, and the small accessories that finish the look — one considered edit, made to be used every day.",
         image: img(IMG.amberDropper, 2200, 1500),
-        video: "",
+        video: "/videos/hero-demo.mp4",
         slides: [{ image: img(IMG.roseGoldMakeup, 2200, 1500) }, { image: img(IMG.ringsLeaves, 2200, 1500) }],
         primaryCta: { label: "Shop All", href: "/shop" },
         secondaryCta: { label: "New Arrivals", href: "/shop?tag=new" },
@@ -34,7 +34,7 @@ export function defaultContent(): SiteContent {
         eyebrow: "In motion",
         heading: "Watch it come to life.",
         body: "A few quiet moments from the Tuana routine — textures, rituals and the small details we obsess over.",
-        video: "",
+        video: "/videos/reel-demo.mp4",
         poster: "",
         button: { label: "Shop the Collection", href: "/shop" },
       },
